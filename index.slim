@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    title Iron News
+    link href="/assets/styles/reset.css" rel="stylesheet" type="text/css" 
+    link href="/assets/styles/style.css" rel="stylesheet" 
+
+  body
+    / # = id, . = class
+    #wrapper
+      header
+        h1 I
+        h2 Iron News
+        #header_list
+          ul
+            li new
+            li comments
+            li show
+            li ask
+            li jobs
+            li submi
+        h5 login
+      
+      #main
+        ol
+          - data["entry"].each do |entry|
+              .lists
+                li
+                  .gray_arrow_pic
+                    img src="/assets/images/grayarrow.gig" alt="gray arrow pointing up"
+                    .headline
+                      p= entry["headline"]
+                    .source= entry["source"]
+                    ul
+                      li.points= "#{entry["points"]} points by #{entry["by"]} #{entry["time"]} hours ago"
+                      li.comments= entry["comments"]
+
+      #more
+        h3#more2 More
+        footer
+          ul#footer_list
+            li Guidlines
+            li FAQ
+            li Support
+            li API
+            li Security
+            li Lists
+            li Bookmarklet
+            li DMCA
+            li Apply to YC
+            li Contact
+        #fake_search
+          h4#search Search:
+          form
+            input type="text"
+
+
+
+
+
